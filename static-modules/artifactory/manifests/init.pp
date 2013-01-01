@@ -31,10 +31,18 @@ class artifactory{
   }
 
   file {'/etc/artifactory/default':
-    ensure=> file,
-    mode  => '0644',
-    source=> 'puppet:///modules/artifactory/default',
-    owner => root,
-    group => root,
+    ensure  => file,
+    mode    => '0644',
+    source  => 'puppet:///modules/artifactory/default',
+    owner   => root,
+    group   => root,
+    require => File['/etc/artifactory']
+  }
+
+  service{'artifactory':
+    ensure    => running,
+    enable    => true,
+    hasstatus => true,
+    require   => [File['/etc/artifactory/default'],Exec['install artifactory']]
   }
 }
