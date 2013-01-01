@@ -1,0 +1,35 @@
+FORGE
+  remote: http://forge.puppetlabs.com
+  specs:
+    puppetlabs/apt (1.1.0)
+      puppetlabs/stdlib (>= 2.2.1)
+    puppetlabs/stdlib (3.2.0)
+
+GIT
+  remote: git://github.com/mstrauss/puppet-editfile.git
+  ref: master
+  sha: 884efdc0997af667f24625e696630e6b1db5a952
+  specs:
+    editfile (0.0.1)
+
+GIT
+  remote: git://github.com/narkisr/puppet-artifactory.git
+  ref: master
+  sha: d8f41587f7c31f954e72cc7f17b6d74162e2d04e
+  specs:
+    artifactory (1.0.0)
+
+GIT
+  remote: git://github.com/narkisr/puppet-tomcat-1.git
+  ref: master
+  sha: ef6f774ca4f08d0ced1f43e210ac70c6ed19dbce
+  specs:
+    tomcat (1.0.0)
+
+DEPENDENCIES
+  artifactory (>= 0)
+  editfile (>= 0)
+  puppetlabs/apt (>= 0)
+  puppetlabs/stdlib (>= 0)
+  tomcat (>= 0)
+
