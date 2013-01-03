@@ -42,7 +42,7 @@ class artifactory{
   service{'artifactory':
     ensure    => running,
     enable    => true,
-    hasstatus => true,
+    hasstatus => false,
     require   => [File['/etc/artifactory/default'],Exec['install artifactory']]
   }
 }
