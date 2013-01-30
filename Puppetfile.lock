@@ -12,7 +12,15 @@ GIT
   specs:
     editfile (0.0.1)
 
+GIT
+  remote: git://github.com/narkisr/puppet-common.git
+  ref: master
+  sha: 2d94636c91d7ce9a83f7669f370e246d2a784117
+  specs:
+    common (0.0.1)
+
 DEPENDENCIES
+  common (>= 0)
   editfile (>= 0)
   puppetlabs/apt (>= 0)
   puppetlabs/stdlib (>= 0)

@@ -8,3 +8,5 @@ mod 'editfile',
    :git => 'git://github.com/mstrauss/puppet-editfile.git'
 
 
+mod 'common', 
+   :git => 'git://github.com/narkisr/puppet-common.git'
