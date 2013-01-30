@@ -6,4 +6,7 @@ gem 'puppet'
 gem 'puppet-lint'
 gem 'librarian-puppet'
 gem 'rake'
-gem 'vagrant-dns-server', :git => 'git://github.com/narkisr/vagrant-dns-server.git'
+
+group :development do
+  gem 'vagrant-dns-server', :git => 'git://github.com/narkisr/vagrant-dns-server.git'
+end
