@@ -11,7 +11,7 @@ class artifactory{
   common::archive { "artifacory-${version}":
     ensure           => present,
     url              => "http://dl.bintray.com/content/jfrog/artifactory/artifactory-${version}.zip?direct",
-    digest_string    => 'facf31cdecb6c388e9d1d1a3bc535a6b',
+    digest_string    => 'b44eb67c37da42439abc684472888e41',
     src_target       => '/opt',
     target           => '/usr/share',
     follow_redirects => true,
