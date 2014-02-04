@@ -10,6 +10,7 @@ Vagrant.configure("2") do |config|
     artifactory.vm.network :public_network, :bridge => bridge
     artifactory.vm.hostname = 'artifactory.local'
     artifactory.vm.network :private_network, ip: "192.168.2.30"
+    artifactory.vm.network :forwarded_port, guest: 8081, host: 8081
 
     artifactory.vm.provider :virtualbox do |vb|
       vb.customize ['modifyvm', :id, '--memory', 2048, '--cpus', 2]

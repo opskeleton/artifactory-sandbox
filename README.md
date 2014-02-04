@@ -2,11 +2,13 @@
 This project manages a sandbox for [artifactory](http://www.jfrog.com/home/v_artifactory_opensource_overview).
 
 # Usage
+
 ```bash
   $ bundle install 
   $ librarian-puppet install 
   $ vagrant up
 ```
+Now head to http://localhost:8081
 
 
 # Copyright and license
