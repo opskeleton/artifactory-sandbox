@@ -12,13 +12,15 @@ Vagrant.configure("2") do |config|
     artifactory.vm.network :private_network, ip: "192.168.2.30"
 
     artifactory.vm.provider :virtualbox do |vb|
-	vb.customize ['modifyvm', :id, '--memory', 2048, '--cpus', 2]
+      vb.customize ['modifyvm', :id, '--memory', 2048, '--cpus', 2]
     end
 
+    artifactory.vm.provision :shell, :inline => 'sudo aptitude update'
+
     artifactory.vm.provision :puppet do |puppet|
-	puppet.manifests_path = 'manifests'
-	puppet.manifest_file  = 'default.pp'
-	puppet.options = '--modulepath=/vagrant/modules:/vagrant/static-modules --hiera_config /vagrant/hiera_vagrant.yaml'
+      puppet.manifests_path = 'manifests'
+      puppet.manifest_file  = 'default.pp'
+      puppet.options = '--modulepath=/vagrant/modules:/vagrant/static-modules --hiera_config /vagrant/hiera_vagrant.yaml'
     end
   end
 end
