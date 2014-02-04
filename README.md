@@ -1,5 +1,5 @@
 # Intro 
-This project manages a sandbox for artifactory 
+This project manages a sandbox for [artifactory](http://www.jfrog.com/home/v_artifactory_opensource_overview).
 
 # Usage
 ```bash
