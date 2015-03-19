@@ -1,27 +1,27 @@
 FORGE
-  remote: http://forge.puppetlabs.com
+  remote: https://forgeapi.puppetlabs.com
   specs:
-    puppetlabs/apt (1.4.0)
-      puppetlabs/stdlib (>= 2.2.1)
-    puppetlabs/stdlib (4.1.0)
+    puppetlabs-apt (1.4.0)
+      puppetlabs-stdlib (>= 2.2.1)
+    puppetlabs-stdlib (4.1.0)
 
 GIT
   remote: git://github.com/mstrauss/puppet-editfile.git
   ref: master
   sha: 884efdc0997af667f24625e696630e6b1db5a952
   specs:
-    editfile (0.0.1)
+    mstrauss-editfile (0.0.1)
 
 GIT
-  remote: git://github.com/narkisr/puppet-common.git
+  remote: git://github.com/pulling-strings/puppet-common.git
   ref: master
   sha: 2d94636c91d7ce9a83f7669f370e246d2a784117
   specs:
-    common (0.0.1)
+    narkisr-common (0.0.1)
 
 DEPENDENCIES
-  common (>= 0)
-  editfile (>= 0)
-  puppetlabs/apt (>= 0)
-  puppetlabs/stdlib (>= 0)
+  mstrauss-editfile (>= 0)
+  narkisr-common (>= 0)
+  puppetlabs-apt (>= 0)
+  puppetlabs-stdlib (>= 0)
 

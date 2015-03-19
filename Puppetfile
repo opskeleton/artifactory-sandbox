@@ -1,12 +1,11 @@
-forge "http://forge.puppetlabs.com"
+forge "https://forgeapi.puppetlabs.com"
 
 mod 'puppetlabs/stdlib'
 
 mod 'puppetlabs/apt'
 
-mod 'editfile', 
+mod 'mstrauss/editfile', 
    :git => 'git://github.com/mstrauss/puppet-editfile.git'
 
-
-mod 'common', 
-   :git => 'git://github.com/narkisr/puppet-common.git'
+mod 'narkisr/common', 
+   :git => 'git://github.com/pulling-strings/puppet-common.git'
