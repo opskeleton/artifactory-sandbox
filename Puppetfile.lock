@@ -1,8 +1,15 @@
 FORGE
   remote: https://forgeapi.puppetlabs.com
   specs:
+    camptocamp-archive (0.4.0)
+    jfryman-nginx (0.2.1)
+      puppetlabs-apt (>= 1.0.0)
+      puppetlabs-concat (>= 1.1.0)
+      puppetlabs-stdlib (>= 3.0.0)
     puppetlabs-apt (1.4.0)
       puppetlabs-stdlib (>= 2.2.1)
+    puppetlabs-concat (1.2.0)
+      puppetlabs-stdlib (< 5.0.0, >= 3.2.0)
     puppetlabs-stdlib (4.1.0)
 
 GIT
@@ -12,16 +19,10 @@ GIT
   specs:
     mstrauss-editfile (0.0.1)
 
-GIT
-  remote: git://github.com/pulling-strings/puppet-common.git
-  ref: master
-  sha: 2d94636c91d7ce9a83f7669f370e246d2a784117
-  specs:
-    narkisr-common (0.0.1)
-
 DEPENDENCIES
+  camptocamp-archive (>= 0)
+  jfryman-nginx (>= 0)
   mstrauss-editfile (>= 0)
-  narkisr-common (>= 0)
   puppetlabs-apt (>= 0)
   puppetlabs-stdlib (>= 0)
 
