@@ -2,16 +2,16 @@
 # see http://devopsnet.com/2012/07/24/installing-artifactory-on-ubuntu/
 class artifactory{
 
-  $version = '3.1.0'
-
+  $version = '3.5.2'
+  $sourceforge = 'http://garr.dl.sourceforge.net/project'
   package{'unzip':
     ensure  => present
   }
 
   common::archive { "artifacory-${version}":
     ensure           => present,
-    url              => "http://garr.dl.sourceforge.net/project/artifactory/artifactory/${version}/artifactory-${version}.zip",
-    digest_string    => 'facf31cdecb6c388e9d1d1a3bc535a6b',
+    url              => "${sourceforge}/artifactory/artifactory/${version}/artifactory-${version}.zip",
+    digest_string    => 'c4056ba50a90c882880c838028d151b6',
     src_target       => '/opt',
     target           => '/usr/share',
     follow_redirects => true,
@@ -26,7 +26,8 @@ class artifactory{
   exec{'install artifactory':
     command => "/usr/share/artifactory-${version}/bin/installService.sh",
     user    => 'root',
-    require => [Common::Archive["artifacory-${version}"],Package['openjdk-7-jre']]
+    require => [Common::Archive["artifacory-${version}"],
+                Package['openjdk-7-jre']]
   }
 
   file{'/etc/artifactory/':
