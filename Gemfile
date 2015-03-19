@@ -12,7 +12,7 @@ end
 group :build do 
   gem 'puppet-lint', :group => :build
   gem 'rake', :group => :build
-  gem 'librarian-puppet', :group => :build
+  gem 'librarian-puppet', '= 2.0.1', :group => :build
   gem 'opskeleton', :group => :build
 end
 
