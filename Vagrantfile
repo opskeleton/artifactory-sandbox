@@ -6,10 +6,10 @@ Vagrant.configure("2") do |config|
   bridge ||= 'eth0'
 
   config.vm.define :artifactory do |artifactory|
-    artifactory.vm.box = 'ubuntu-13.10_puppet-3.4.0' 
+    artifactory.vm.box = 'ubuntu-14.10_puppet-3.7.3' 
     artifactory.vm.network :public_network, :bridge => bridge
     artifactory.vm.hostname = 'artifactory.local'
-    artifactory.vm.network :private_network, ip: "192.168.2.30"
+    artifactory.vm.network :private_network, ip: '192.168.2.30'
     artifactory.vm.network :forwarded_port, guest: 8081, host: 8081
 
     artifactory.vm.provider :virtualbox do |vb|
@@ -17,7 +17,6 @@ Vagrant.configure("2") do |config|
     end
 
     artifactory.vm.provision :shell, :inline => 'sudo aptitude update'
-
     artifactory.vm.provision :puppet do |puppet|
       puppet.manifests_path = 'manifests'
       puppet.manifest_file  = 'default.pp'
