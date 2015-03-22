@@ -22,7 +22,7 @@ GIT
 GIT
   remote: git://github.com/pulling-strings/puppet-artifactory.git
   ref: master
-  sha: 0349baed7274461d4926bbbfa4285ca7ca85c1ca
+  sha: f9c8b336c4ac6014abf0fab5ae0675ca4fc2d859
   specs:
     strings-artifactory (0.1.0)
       camptocamp-archive (>= 0.4.0)
