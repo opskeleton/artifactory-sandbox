@@ -2,15 +2,15 @@ FORGE
   remote: https://forgeapi.puppetlabs.com
   specs:
     camptocamp-archive (0.4.0)
-    jfryman-nginx (0.2.1)
-      puppetlabs-apt (>= 1.0.0)
-      puppetlabs-concat (>= 1.1.0)
-      puppetlabs-stdlib (>= 3.0.0)
-    puppetlabs-apt (1.4.0)
+    jfryman-nginx (0.2.2)
+      puppetlabs-apt (< 2.0.0, >= 1.0.0)
+      puppetlabs-concat (< 2.0.0, >= 1.1.1)
+      puppetlabs-stdlib (< 5.0.0, >= 4.2.0)
+    puppetlabs-apt (1.8.0)
       puppetlabs-stdlib (>= 2.2.1)
     puppetlabs-concat (1.2.0)
       puppetlabs-stdlib (< 5.0.0, >= 3.2.0)
-    puppetlabs-stdlib (4.1.0)
+    puppetlabs-stdlib (4.5.1)
 
 GIT
   remote: git://github.com/mstrauss/puppet-editfile.git
@@ -19,10 +19,28 @@ GIT
   specs:
     mstrauss-editfile (0.0.1)
 
+GIT
+  remote: git://github.com/pulling-strings/puppet-artifactory.git
+  ref: master
+  sha: 0349baed7274461d4926bbbfa4285ca7ca85c1ca
+  specs:
+    strings-artifactory (0.1.0)
+      camptocamp-archive (>= 0.4.0)
+      jfryman-nginx (>= 0.2.1)
+      puppetlabs-apt (>= 1.0.0)
+      puppetlabs-stdlib (>= 3.0.0)
+
+GIT
+  remote: git://github.com/ripienaar/puppet-module-data.git
+  ref: master
+  sha: 0eead7f411f404b0a9a73bb161aac46c9fbe3219
+  specs:
+    rip-module-data (0.4.0)
+
 DEPENDENCIES
-  camptocamp-archive (>= 0)
-  jfryman-nginx (>= 0)
   mstrauss-editfile (>= 0)
   puppetlabs-apt (>= 0)
   puppetlabs-stdlib (>= 0)
+  rip-module-data (>= 0)
+  strings-artifactory (>= 0)
 
