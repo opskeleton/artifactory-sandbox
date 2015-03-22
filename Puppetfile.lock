@@ -17,7 +17,7 @@ FORGE
 GIT
   remote: git://github.com/pulling-strings/puppet-artifactory.git
   ref: master
-  sha: a2819cc738c0b13ab76064231416590847db3f15
+  sha: 6164845ad649db575fefa665a73c7a284d626022
   specs:
     strings-artifactory (0.1.0)
       attachmentgenie-ufw (>= 1.4.9)
