@@ -15,16 +15,9 @@ FORGE
     puppetlabs-stdlib (4.5.1)
 
 GIT
-  remote: git://github.com/mstrauss/puppet-editfile.git
-  ref: master
-  sha: 884efdc0997af667f24625e696630e6b1db5a952
-  specs:
-    mstrauss-editfile (0.0.1)
-
-GIT
   remote: git://github.com/pulling-strings/puppet-artifactory.git
   ref: master
-  sha: 15f63ad0e3dc142f0a3f29ca9ba46bc4fbee792d
+  sha: a2819cc738c0b13ab76064231416590847db3f15
   specs:
     strings-artifactory (0.1.0)
       attachmentgenie-ufw (>= 1.4.9)
@@ -41,7 +34,6 @@ GIT
     rip-module-data (0.4.0)
 
 DEPENDENCIES
-  mstrauss-editfile (>= 0)
   puppetlabs-apt (>= 0)
   puppetlabs-stdlib (>= 0)
   rip-module-data (>= 0)
