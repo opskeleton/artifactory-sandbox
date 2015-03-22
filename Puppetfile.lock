@@ -1,6 +1,8 @@
 FORGE
   remote: https://forgeapi.puppetlabs.com
   specs:
+    attachmentgenie-ufw (1.4.9)
+      puppetlabs-stdlib (>= 2.2.1)
     camptocamp-archive (0.4.0)
     jfryman-nginx (0.2.2)
       puppetlabs-apt (< 2.0.0, >= 1.0.0)
@@ -22,9 +24,10 @@ GIT
 GIT
   remote: git://github.com/pulling-strings/puppet-artifactory.git
   ref: master
-  sha: f9c8b336c4ac6014abf0fab5ae0675ca4fc2d859
+  sha: 15f63ad0e3dc142f0a3f29ca9ba46bc4fbee792d
   specs:
     strings-artifactory (0.1.0)
+      attachmentgenie-ufw (>= 1.4.9)
       camptocamp-archive (>= 0.4.0)
       jfryman-nginx (>= 0.2.1)
       puppetlabs-apt (>= 1.0.0)
