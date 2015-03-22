@@ -1,5 +1,15 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
+
+update = <<SCRIPT
+if [ ! -f /tmp/up ]; then
+  sudo sed -i.bak s/us.archive/il.archive/g /etc/apt/sources.list
+  sudo aptitude update 
+  touch /tmp/up
+fi
+SCRIPT
+
+
 Vagrant.configure("2") do |config|
 
   bridge = ENV['VAGRANT_BRIDGE']
@@ -16,7 +26,7 @@ Vagrant.configure("2") do |config|
       vb.customize ['modifyvm', :id, '--memory', 2048, '--cpus', 2]
     end
 
-    artifactory.vm.provision :shell, :inline => 'sudo aptitude update'
+    artifactory.vm.provision :shell, :inline => update
     artifactory.vm.provision :puppet do |puppet|
       puppet.manifests_path = 'manifests'
       puppet.manifest_file  = 'default.pp'
