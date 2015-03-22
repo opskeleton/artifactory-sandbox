@@ -1,6 +1,3 @@
-group{ 'puppet': ensure  => present }
-
-node artifactory {
+node default {
   include artifactory
-  class{'artifactory': }
 }
