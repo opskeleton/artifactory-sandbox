@@ -2,10 +2,12 @@
 # vi: set ft=ruby :
 
 update = <<SCRIPT
-if [ ! -f /tmp/up ]; then
-  sudo sed -i.bak s/us.archive/il.archive/g /etc/apt/sources.list
-  sudo aptitude update 
-  touch /tmp/up
+if ! grep -q 'mirror://' /etc/apt/sources.list; then
+  echo "deb mirror://mirrors.ubuntu.com/mirrors.txt $(lsb_release -cs)           main restricted universe multiverse" >  /etc/apt/sources.list
+  echo "deb mirror://mirrors.ubuntu.com/mirrors.txt $(lsb_release -cs)-updates   main restricted universe multiverse" >> /etc/apt/sources.list
+  echo "deb mirror://mirrors.ubuntu.com/mirrors.txt $(lsb_release -cs)-backports main restricted universe multiverse" >> /etc/apt/sources.list
+  echo "deb mirror://mirrors.ubuntu.com/mirrors.txt $(lsb_release -cs)-security  main restricted universe multiverse" >> /etc/apt/sources.list
+  apt-get update
 fi
 SCRIPT
 
