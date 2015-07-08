@@ -12,6 +12,9 @@ fi
 SCRIPT
 
 
+base_net = ENV['BASE_NET']
+base_net ||= '10.0.0'
+
 Vagrant.configure("2") do |config|
 
   bridge = ENV['VAGRANT_BRIDGE']
@@ -21,7 +24,7 @@ Vagrant.configure("2") do |config|
     artifactory.vm.box = 'ubuntu-14.10_puppet-3.7.3' 
     artifactory.vm.network :public_network, :bridge => bridge
     artifactory.vm.hostname = 'artifactory.local'
-    artifactory.vm.network :private_network, ip: '192.168.2.30'
+    artifactory.vm.network :private_network, ip: "#{base_net}.30"
     artifactory.vm.network :forwarded_port, guest: 8081, host: 8081
 
     artifactory.vm.provider :virtualbox do |vb|
@@ -40,7 +43,7 @@ Vagrant.configure("2") do |config|
     artifactory.vm.box = 'ubuntu-14.10_puppet-3.7.3' 
     artifactory.vm.network :public_network, :bridge => bridge
     artifactory.vm.hostname = 'artifactory.local'
-    artifactory.vm.network :private_network, ip: '192.168.2.30'
+    artifactory.vm.network :private_network, ip: "#{base_net}.31"
     artifactory.vm.network :forwarded_port, guest: 8081, host: 8081
 
     artifactory.vm.provider :virtualbox do |vb|
